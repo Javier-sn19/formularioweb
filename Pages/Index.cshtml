@@ -1,0 +1,383 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+@using Microsoft.AspNetCore.Mvc.Rendering
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    var version = ViewData["version"];
+    var link = ViewData["link"];
+    var coreui = ViewData["coreui"];
+}
+<!--
+* CoreUI - Free Bootstrap Admin Template
+* @version v4.2.2
+* @link https://coreui.io/product/free-bootstrap-admin-template/
+* Copyright (c) 2023 creativeLabs Łukasz Holeczek
+* Licensed under MIT (https://github.com/coreui/coreui-free-bootstrap-admin-template/blob/main/LICENSE)
+-->
+<!-- Breadcrumb-->
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="~/css/simplebar.css">
+    <link rel="stylesheet" href="~/css/vendors/simplebar.css">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/examples.css" rel="stylesheet">
+    <link href="~/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
+    <link href="~/css/limite.css">
+</head>
+<body class="d-flex flex-column h-100">
+    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
+        <div class="sidebar-brand d-none d-md-flex">
+            <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+                <use xlink:href="assets/brand/coreui.svg#full"></use>
+            </svg>
+            <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
+                <use xlink:href="assets/brand/coreui.svg#signet"></use>
+            </svg>
+        </div>
+        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <svg class="nav-icon">
+                        <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
+                    </svg> Dashboard<span class="badge badge-sm bg-info ms-auto">NEW</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Corregir etiqueta button -->
+        <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+    </div>
+    <!-- CoreUI y plugins necesarios -->
+    <script src="~/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+    <script src="~/vendors/simplebar/js/simplebar.min.js"></script>
+    <!-- Plugins y scripts requeridos por esta vista -->
+    <script src="~/vendors/chart.js/js/chart.min.js"></script>
+    <script src="~/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
+    <script src="~/vendors/@coreui/utils/js/coreui-utils.js"></script>
+    <script src="~/js/main.js"></script>
+
+
+
+    <!-- DATOS -->
+    <h3 style="text-align: center;">DATOS EMPRESARIALES</h3>
+    <div class="d-flex justify-content-center align-items-center">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th>FORM CLIENTE</th>
+                    <th>DATOS</th>
+                </tr>
+            </thead>
+            <tbody class="d-flex flex-column align-items-center">
+                <tr>
+                    <td>NOMBRE DEL EMPRESARIO</td>
+                    <td><input type="text" id="nombre"></td>
+                </tr>
+                <tr>
+                    <td>TELEFONO DE CONTACTO</td>
+                    <td><input type="text" id="telefono"></td>
+                </tr>
+                <tr>
+                    <td>GIRO</td>
+                    <td><input type="text" id="giro"></td>
+                </tr>
+                <tr>
+                    <td>FECHA</td>
+                    <td><input type="text" id="fecha"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BLOQUE 1 -->
+    <h3 style="text-align: center;">RESUMEN EJECUTIVO DE LA EMPRESA</h3>
+    <div class="d-flex justify-content-center align-items-center">
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>RESPUESTA</th>
+                    </tr>
+                </thead>
+                <tbody class="d-flex flex-column align-items-center">
+                    <tr>
+                        <td>¿Tiene definido los OBJETIVOS de su empresa?</td>
+                        <td>
+                            <select id="B1P1">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Tiene definida la MISIÓN de su empresa?</td>
+                        <td>
+                            <select id="B1P2">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Tiene definida la VISIÓN de su empresa?</td>
+                        <td>
+                            <select id="B1P3">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Cuenta con el ORGANIGRAMA de su empresa?</td>
+                        <td>
+                            <select id="B1P4">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Tiene ASESORES EXTERNOS?</td>
+                        <td>
+                            <select id="B1P5">
+                                <option value="0"></option>
+                                <option value="7">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Cuenta con dos o más PROPIETARIOS y/o ACCIONISTAS?</td>
+                        <td>
+                            <select id="B1P6">
+                                <option value="0"></option>
+                                <option value="13">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<!-- BLOQUE 2 -->
+
+<h3 style="text-align: center;">HISTORIA Y SITUACION ACTUAL</h3>
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>RESPUESTA</th>
+                </tr>
+            </thead>
+            <tbody class="d-flex flex-column align-items-center">
+                <tr>
+                    <td>¿Cuál es su FACTURACIÓN aproximada mensual?</td>
+                    <td>
+                        <select id="B2P1">
+                            <option value="0"></option>
+                            <option value="45">Más de $999,999.00 MXN</option>
+                            <option value="25">Más de $500,000.00 MXN</option>
+                            <option value="15">Más de $99,000.00 MXN</option>
+                            <option value="0">Menos de $99,000.00 MXN</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>¿Cuenta con información de sus COSTOS mensual, anual o de más de un año?</td>
+                    <td>
+                        <select id="B2P2">
+                            <option value="0"></option>
+                            <option value="30">Sí</option>
+                            <option value="0">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>¿A qué SECTOR pertenece tu empresa?</td>
+                    <td>
+                        <select id="B2P3">
+                            <option value="0"></option>
+                            <option value="25">Sector primario</option>
+                            <option value="25">Sector secundario</option>
+                            <option value="25">Sector terciario</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    <!-- BLOQUE 3 -->
+    <h3 style="text-align: center;">SITUACION ESTRATEGICA Y ACESO A TECNOLOGIA</h3>
+    <br>
+
+    <div class="d-flex justify-content-center">
+        <style>
+            /* Estilos para la tabla */
+            .table-container {
+                max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+                margin: 0 auto; /* Centra la tabla horizontalmente */
+            }
+
+            /* Estilos para las celdas de la tabla */
+            .table td, .table th {
+                max-width: 300px; /* Ajusta el ancho máximo de las celdas según tus necesidades */
+                overflow: hidden;
+                text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
+                white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+            }
+        </style>
+
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>RESPUESTA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>¿Tiene definido los OBJETIVOS de su empresa</td>
+                        <td>
+                            <form>
+                                <label>
+                                    <input type="checkbox" name="B3P1" value="10">
+                                    Equipos
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="B3P1" value="10">
+                                    Hardware
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="B3P1" value="10">
+                                    Software
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="B3P1" value="0" onclick="cancelar()">
+                                    No cuento con tecnologia
+                                </label>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Servicios futuros: ¿Desea desarrollar NUEVAS LINEAS DE NEGOCIO?</td>
+                        <td>
+                            <select id="B3P2">
+                                <option value="0"></option>
+                                <option value="15">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Cuenta usted con un PLAN DE MARKETING O ESTRATEGIA COMERCIAL?</td>
+                        <td>
+                            <select id="B3P3">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Realizas CAPACITACIONES MENSUALES al personal de su empresa?</td>
+                        <td>
+                            <select id="B3P4">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Conoce su COMPETENCIA?</td>
+                        <td>
+                            <select id="B3P5">
+                                <option value="0"></option>
+                                <option value="15">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- BLOQUE 4 -->
+    <h3 style="text-align: center; margin: 0 auto;">IDENTIFICACION DE PROCESOS</h3>
+    <div class="d-flex justify-content-center">
+        <div class="table-container-b4">
+            <table class="table-b4">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>RESPUESTA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>¿Cuenta con sus AREAS DEFINIDAS (ORGANIGRAMA)?</td>
+                        <td>
+                            <select id="B4P1">
+                                <option value="0"></option>
+                                <option value="60">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Cuenta con la DESCRIPCION DE PUESTOS de su empresa?</td>
+                        <td>
+                            <select id="B4P2">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>¿Cuenta con sus PROCEDIMIENTOS DOCUMENTADOS?</td>
+                        <td>
+                            <select id="B4P3">
+                                <option value="0"></option>
+                                <option value="20">Sí</option>
+                                <option value="0">No</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+    <!-- RESULTADOS -->
+    <div class="button-container" style="text-align: right; position: fixed; bottom: 10px; right: 10px;">
+        <button onclick="IrAResultado()">Ver Resultados</button> 
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
+

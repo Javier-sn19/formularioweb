@@ -1,0 +1,89 @@
+﻿body
+.custom-table {
+    max-width: 100px; 
+    width: 100%;
+}
+
+.table-container {
+    max-width: 600px; /* Ajusta el valor según tus necesidades */
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+}
+.table-container {
+    max-width: 100px; /* Ajusta el valor según tus necesidades */
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+}
+
+.table-container {
+    max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+}
+
+/* Estilos para las celdas de la tabla */
+.table td, .table th {
+    max-width: 300px; /* Ajusta el ancho máximo de las celdas según tus necesidades */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Estilos para la tabla */
+.table-container-b4 {
+    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+}
+
+/* Estilos para las celdas de la tabla */
+.table-b4 td, .table-b4 th {
+    max-width: 300px; /* Ajusta el ancho máximo de las celdas según tus necesidades */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+/* Estilos para el botón */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+/* Agrega este código en un archivo CSS separado, por ejemplo, resultado.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0000008d;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 0;
+}
+
+table {
+    margin: 10px auto;
+    border-collapse: collapse;
+    background-color: rgba(0, 200, 255, 0.45);
+    width: 50%;
+    max-width: 700px;
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 7px;
+    text-align: left;
+}
+
+th {
+    background-color: #0055ff7b;
+}

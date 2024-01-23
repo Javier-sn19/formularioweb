@@ -1,0 +1,70 @@
+﻿@page
+@model formularioweb.Pages.resultadoModel
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de Evaluación</title>
+    <link rel="stylesheet" type="text/css" href="~/css/limite.css" />
+</head>
+<body>
+    <h3>Resultados de Evaluación</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>DATOS EMPRESARIALES</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nombre:</td>
+                <td><span id="nombre"></span></td>
+            </tr>
+            <tr>
+                <td>Teléfono:</td>
+                <td><span id="telefono"></span></td>
+            </tr>
+            <tr>
+                <td>Giro:</td>
+                <td><span id="giro"></span></td>
+            </tr>
+            <tr>
+                <td>Calificación:</td>
+                <td><span id="sumaTotal"></span>%</td>
+            </tr>
+            <tr>
+                <td>Fecha:</td>
+                <td><span id="fecha"></span></td>
+            </tr>
+        </tbody>
+        <thead>
+            <tr>
+                <th>RESULTADO DIAGNOSTICO</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>RESUMEN EJECUTIVO DE LA EMPRESA:</td>
+                <td><span id="B1"></span>%</td>
+            </tr>
+            <tr>
+                <td>HISTORIA Y SITUACION ACTUAL:</td>
+                <td><span id="B2"></span>%</td>
+            </tr>
+            <tr>
+                <td>SITUACION ESTRATEGICA Y ACCESO A TECNOLOGIA:</td>
+                <td><span id="B3"></span>%</td>
+            </tr>
+            <tr>
+                <td>IDENTIFICACION DE PROCESOS:</td>
+                <td><span id="B4"></span>%</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="~/js/script.js"></script>
+</body>
+</html>
